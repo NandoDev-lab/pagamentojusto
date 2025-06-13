@@ -12,20 +12,20 @@ export default function Calculadora() {
             <div className={styles.painel}>
                 <section className={styles.menu}>
                     <h2>Calculadoras</h2>
-                    <ul >
-                        <li>Valor/Hora</li>
-                        <li> Valor Adicional Noturno</li>
-                        <li>Proporcional Ferias</li>
-                        <li>Adicional de Insalubridade</li>
-                        <li>Adicional de Periculosidade</li>
-                        <li>Proporcional 13º Salário</li>
-                        <li>Calculo de Recisão</li>
-                    </ul>                    
+                 <button>Valor da Hora</button>   
+                 <button>Valor Adicional norturno</button>   
+                 <button>Proporcional de Férias</button>   
+                 <button>Adicional de Insalubridade</button>   
+                 <button>Adicional de Periculosidade</button> 
+                 <button>Proporcional 13º Salário</button>  
+                 <button>Calculo de Recisão</button>  
+                 
                 </section>
                 <div className={styles.formulario}>
                         <Valor_hora/>
                 </div>
             </div>
+            
         </>
     )
 }
