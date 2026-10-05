@@ -1,31 +1,65 @@
-
 import Navbar from "./component/navbar";
-import styles from '../styles/calculadoras.module.css'
 import Valor_hora from "./component/formularios/form_valorHora";
+import styles from "../styles/calculadoras.module.css";
 
-
+const upcomingCalculators = [
+  "Adicional noturno",
+  "Férias proporcionais",
+  "Insalubridade",
+  "Periculosidade",
+  "13º salário",
+  "Rescisão",
+];
 
 export default function Calculadora() {
-    return (
-        <>
-            <Navbar></Navbar>
-            <div className={styles.painel}>
-                <section className={styles.menu}>
-                    <h2>Calculadoras</h2>
-                 <button>Valor da Hora</button>   
-                 <button>Valor Adicional norturno</button>   
-                 <button>Proporcional de Férias</button>   
-                 <button>Adicional de Insalubridade</button>   
-                 <button>Adicional de Periculosidade</button> 
-                 <button>Proporcional 13º Salário</button>  
-                 <button>Calculo de Recisão</button>  
-                 
-                </section>
-                <div className={styles.formulario}>
-                        <Valor_hora/>
-                </div>
-            </div>
-            
-        </>
-    )
+  return (
+    <>
+      <Navbar />
+      <main className={styles.page}>
+        <header className={styles.intro}>
+          <p className={styles.eyebrow}>Ferramentas práticas</p>
+          <h1 className={styles.title}>Calculadoras</h1>
+          <p className={styles.description}>
+            Faça uma estimativa rápida e entenda melhor como o seu salário se
+            relaciona com as horas trabalhadas.
+          </p>
+        </header>
+
+        <div className={styles.layout}>
+          <aside className={styles.menu} aria-label="Calculadoras disponíveis">
+            <h2 className={styles.menuTitle}>Suas ferramentas</h2>
+            <p className={styles.menuHint}>
+              Mais ferramentas serão adicionadas em breve.
+            </p>
+            <ul className={styles.menuList}>
+              <li>
+                <span className={`${styles.menuItem} ${styles.menuItemActive}`}>
+                  Valor da hora
+                </span>
+              </li>
+              {upcomingCalculators.map((name) => (
+                <li key={name}>
+                  <span className={styles.menuItem}>
+                    {name}
+                    <span className={styles.comingSoon}>EM BREVE</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </aside>
+
+          <section className={styles.formCard} aria-labelledby="valor-hora-title">
+            <h2 className={styles.formHeading} id="valor-hora-title">
+              Quanto vale sua hora?
+            </h2>
+            <p className={styles.formDescription}>
+              Informe seu salário mensal e a carga horária para calcular uma
+              estimativa do valor bruto por hora.
+            </p>
+            <Valor_hora />
+          </section>
+        </div>
+      </main>
+    </>
+  );
 }

@@ -1,10 +1,33 @@
-import Navbar from "./component/navbar"
-import Link from "next/link"
-export default function Apoie(){
-    return(
+import Link from "next/link";
+import Navbar from "./component/navbar";
+import styles from "../styles/conteudo.module.css";
+
+export default function Apoie() {
+  return (
     <>
-    <Navbar></Navbar>
-     <Link href="/">inicio</Link>
+      <Navbar />
+      <main className={styles.page}>
+        <p className={styles.eyebrow}>Construído para compartilhar</p>
+        <h1 className={styles.title}>Apoie o Pagamento Justo</h1>
+        <p className={styles.description}>
+          O projeto busca tornar informações sobre remuneração e direitos
+          trabalhistas mais fáceis de entender e acessar.
+        </p>
+        <section className={styles.panel} aria-labelledby="apoie-status">
+          <div className={styles.panelIcon} aria-hidden="true">♡</div>
+          <div>
+            <h2 id="apoie-status">Ajude compartilhando</h2>
+            <p>
+              Ainda estamos preparando formas de apoio. Por enquanto, você pode
+              contribuir compartilhando o projeto com alguém que possa se
+              beneficiar destas ferramentas.
+            </p>
+            <Link className={styles.link} href="/calculadoras">
+              Conhecer as ferramentas <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
+      </main>
     </>
-    )
+  );
 }
