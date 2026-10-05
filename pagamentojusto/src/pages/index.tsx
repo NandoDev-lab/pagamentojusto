@@ -1,5 +1,7 @@
 import Link from "next/link";
-import Navbar from "./component/navbar";
+import Seo from "../components/seo";
+import { siteUrl } from "../lib/seo";
+import Navbar from "../components/navbar";
 import styles from "../styles/home.module.css";
 
 const destinations = [
@@ -29,6 +31,20 @@ const destinations = [
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Pagamento Justo | Calcule seu salário e conheça seus direitos"
+        description="Calcule o valor da sua hora de trabalho e encontre informações claras sobre remuneração e direitos trabalhistas."
+        path="/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Pagamento Justo",
+          url: `${siteUrl}/`,
+          inLanguage: "pt-BR",
+          description:
+            "Ferramentas e informações acessíveis sobre remuneração e direitos trabalhistas.",
+        }}
+      />
       <Navbar />
       <main className={styles.page}>
         <section className={styles.hero}>

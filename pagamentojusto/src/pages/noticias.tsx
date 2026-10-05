@@ -1,10 +1,17 @@
 import Link from "next/link";
-import Navbar from "./component/navbar";
+import Seo from "../components/seo";
+import Navbar from "../components/navbar";
 import styles from "../styles/conteudo.module.css";
 
 export default function Noticias() {
   return (
     <>
+      <Seo
+        title="Notícias sobre trabalho e direitos | Pagamento Justo"
+        description="Acompanhe conteúdos e novidades sobre trabalho, renda e direitos trabalhistas."
+        path="/noticias/"
+        indexable={false}
+      />
       <Navbar />
       <main className={styles.page}>
         <p className={styles.eyebrow}>Informação para o dia a dia</p>

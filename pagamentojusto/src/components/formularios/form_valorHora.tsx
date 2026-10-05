@@ -1,5 +1,5 @@
 import { type FormEvent, useState } from "react";
-import styles from "../../../styles/formulario.module.css";
+import styles from "../../styles/formulario.module.css";
 
 const currency = new Intl.NumberFormat("pt-BR", {
   style: "currency",

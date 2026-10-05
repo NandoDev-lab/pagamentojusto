@@ -24,3 +24,13 @@ o caminho-base `/pagamentojusto` durante o build do GitHub Actions.
 
 O GitHub Pages hospeda apenas arquivos estáticos. Por isso, rotas de API do
 Next.js não fazem parte desta publicação.
+
+## SEO
+
+As páginas públicas usam títulos, descrições, URLs canônicas e metadados para
+compartilhamento. O atributo de idioma do documento é `pt-BR`; o sitemap e as
+regras para rastreadores ficam em `public/sitemap.xml` e `public/robots.txt`.
+Páginas que ainda estão em preparação usam `noindex` e não aparecem no sitemap.
+
+Depois da publicação, o sitemap pode ser enviado ao Google Search Console:
+`https://nandodev-lab.github.io/pagamentojusto/sitemap.xml`.

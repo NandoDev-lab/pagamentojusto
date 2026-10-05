@@ -1,5 +1,6 @@
-import Navbar from "./component/navbar";
-import Valor_hora from "./component/formularios/form_valorHora";
+import Seo from "../components/seo";
+import Navbar from "../components/navbar";
+import Valor_hora from "../components/formularios/form_valorHora";
 import styles from "../styles/calculadoras.module.css";
 
 const upcomingCalculators = [
@@ -14,6 +15,11 @@ const upcomingCalculators = [
 export default function Calculadora() {
   return (
     <>
+      <Seo
+        title="Calculadora de salário e valor da hora | Pagamento Justo"
+        description="Calcule o valor bruto estimado da sua hora de trabalho a partir do salário mensal e da carga horária."
+        path="/calculadoras/"
+      />
       <Navbar />
       <main className={styles.page}>
         <header className={styles.intro}>

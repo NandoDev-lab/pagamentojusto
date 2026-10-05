@@ -1,10 +1,17 @@
 import Link from "next/link";
-import Navbar from "./component/navbar";
+import Seo from "../components/seo";
+import Navbar from "../components/navbar";
 import styles from "../styles/conteudo.module.css";
 
 export default function Apoie() {
   return (
     <>
+      <Seo
+        title="Apoie o Pagamento Justo"
+        description="Conheça o projeto Pagamento Justo e ajude a compartilhar informações acessíveis sobre remuneração e direitos trabalhistas."
+        path="/apoie/"
+        indexable={false}
+      />
       <Navbar />
       <main className={styles.page}>
         <p className={styles.eyebrow}>Construído para compartilhar</p>

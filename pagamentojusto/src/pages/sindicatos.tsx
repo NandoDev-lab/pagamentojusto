@@ -1,10 +1,17 @@
 import Link from "next/link";
-import Navbar from "./component/navbar";
+import Seo from "../components/seo";
+import Navbar from "../components/navbar";
 import styles from "../styles/conteudo.module.css";
 
 export default function Sindicatos() {
   return (
     <>
+      <Seo
+        title="Sindicatos e convenções coletivas | Pagamento Justo"
+        description="Entenda a importância das convenções coletivas e encontre orientações sobre direitos da sua categoria."
+        path="/sindicatos/"
+        indexable={false}
+      />
       <Navbar />
       <main className={styles.page}>
         <p className={styles.eyebrow}>Seus direitos, sem complicação</p>
