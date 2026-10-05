@@ -4,7 +4,6 @@ export default function Navbar() {
   return (
     <>    
     <nav className={styles.nav}>
-      <div><img src="" alt="logo" srcSet="logo" /></div>
       <ul>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/calculadoras">Calculadoras</Link></li>
