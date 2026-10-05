@@ -12,6 +12,7 @@ const links = [
 
 export default function Navbar() {
   const { asPath } = useRouter();
+  // Remove query string e barra final para comparar a rota atual com os links.
   const currentPath = asPath.split("?")[0].replace(/\/$/, "") || "/";
 
   return (
@@ -22,6 +23,7 @@ export default function Navbar() {
           <span>Pagamento Justo</span>
         </Link>
         <ul className={styles.links}>
+          {/* Mantém os itens de navegação sincronizados com a lista declarada acima. */}
           {links.map(({ href, label }) => {
             const active = currentPath === href;
             return (

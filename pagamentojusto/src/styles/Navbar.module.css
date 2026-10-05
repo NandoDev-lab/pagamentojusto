@@ -1,3 +1,4 @@
+/* Cabeçalho translúcido fixo que mantém a navegação acessível durante a rolagem. */
 .nav {
   position: sticky;
   z-index: 10;

@@ -7,6 +7,7 @@ const currency = new Intl.NumberFormat("pt-BR", {
 });
 
 export default function Valor_hora() {
+  // O valor calculado é limpo quando um dado muda para não exibir um resultado desatualizado.
   const [salario, setSalario] = useState("");
   const [horas, setHoras] = useState("");
   const [horasPersonalizadas, setHorasPersonalizadas] = useState("");
@@ -15,6 +16,7 @@ export default function Valor_hora() {
   function calcular(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const salarioInformado = Number(salario);
+    // A opção personalizada guarda a carga horária em um campo separado.
     const horasInformadas = Number(
       horas === "custom" ? horasPersonalizadas : horas,
     );

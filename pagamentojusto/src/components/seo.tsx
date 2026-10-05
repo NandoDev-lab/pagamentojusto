@@ -17,6 +17,7 @@ export default function Seo({
   structuredData,
 }: SeoProps) {
   const url = canonicalUrl(path);
+  // Escapa "<" para impedir que dados estruturados sejam interpretados como marcação HTML.
   const jsonLd = structuredData
     ? JSON.stringify(structuredData).replace(/</g, "\\u003c")
     : undefined;
@@ -25,6 +26,7 @@ export default function Seo({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {/* Páginas incompletas continuam acessíveis, mas não entram no índice. */}
       <meta
         name="robots"
         content={indexable ? "index, follow, max-image-preview:large" : "noindex, follow"}

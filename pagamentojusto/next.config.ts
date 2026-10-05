@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+// Aplica o caminho do repositório somente no build publicado pelo GitHub Actions.
 const basePath = process.env.GITHUB_ACTIONS ? "/pagamentojusto" : "";
 
 const nextConfig: NextConfig = {

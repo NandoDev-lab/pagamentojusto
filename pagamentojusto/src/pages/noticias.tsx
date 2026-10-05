@@ -3,6 +3,7 @@ import Seo from "../components/seo";
 import Navbar from "../components/navbar";
 import styles from "../styles/conteudo.module.css";
 
+// Mantém a rota no ar sem indexá-la enquanto não houver notícias publicadas.
 export default function Noticias() {
   return (
     <>

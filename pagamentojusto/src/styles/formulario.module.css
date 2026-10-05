@@ -1,3 +1,4 @@
+/* Os campos e o resultado seguem uma única coluna para facilitar o preenchimento. */
 .form {
   display: grid;
   gap: 18px;

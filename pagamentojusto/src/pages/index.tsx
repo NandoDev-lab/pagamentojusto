@@ -31,6 +31,7 @@ const destinations = [
 export default function Home() {
   return (
     <>
+      {/* Dados estruturados descrevem o site para mecanismos de busca. */}
       <Seo
         title="Pagamento Justo | Calcule seu salário e conheça seus direitos"
         description="Calcule o valor da sua hora de trabalho e encontre informações claras sobre remuneração e direitos trabalhistas."
@@ -97,6 +98,7 @@ export default function Home() {
           <div className={styles.heroAccent} />
         </section>
 
+        {/* Apresenta as principais áreas em cartões navegáveis. */}
         <section className={styles.destinations} id="explorar">
           <div className={styles.sectionHeading}>
             <div>

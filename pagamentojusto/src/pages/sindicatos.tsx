@@ -3,6 +3,7 @@ import Seo from "../components/seo";
 import Navbar from "../components/navbar";
 import styles from "../styles/conteudo.module.css";
 
+// Explica que esta seção está em preparação até reunir referências por categoria.
 export default function Sindicatos() {
   return (
     <>

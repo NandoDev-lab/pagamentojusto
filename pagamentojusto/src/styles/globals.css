@@ -1,3 +1,4 @@
+/* Base compartilhada para evitar diferenças de dimensionamento entre componentes. */
 * {
   box-sizing: border-box;
 }

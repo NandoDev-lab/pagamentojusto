@@ -43,6 +43,7 @@ export default function Calculadora() {
                   Valor da hora
                 </span>
               </li>
+              {/* Indica funcionalidades planejadas sem apresentá-las como disponíveis. */}
               {upcomingCalculators.map((name) => (
                 <li key={name}>
                   <span className={styles.menuItem}>

@@ -1,3 +1,4 @@
+# Permite rastreamento público e informa aos robôs onde encontrar o sitemap.
 User-agent: *
 Allow: /
 

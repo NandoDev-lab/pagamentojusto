@@ -3,6 +3,7 @@ import Seo from "../components/seo";
 import Navbar from "../components/navbar";
 import styles from "../styles/conteudo.module.css";
 
+// Apresenta formas de apoio sem prometer opções que ainda não foram implementadas.
 export default function Apoie() {
   return (
     <>

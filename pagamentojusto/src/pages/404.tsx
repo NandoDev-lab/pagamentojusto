@@ -3,11 +3,13 @@ import Link from "next/link";
 import Navbar from "../components/navbar";
 import styles from "../styles/conteudo.module.css";
 
+// Oferece caminhos úteis ao visitante quando o endereço solicitado não existe.
 export default function NotFound() {
   return (
     <>
       <Head>
         <title>Página não encontrada | Pagamento Justo</title>
+        {/* Páginas de erro não devem ser indexadas como conteúdo do site. */}
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <Navbar />

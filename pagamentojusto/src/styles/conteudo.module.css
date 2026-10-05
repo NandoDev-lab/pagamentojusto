@@ -1,3 +1,4 @@
+/* Estrutura reutilizada pelas páginas informativas e pela página 404. */
 .page {
   width: min(960px, calc(100% - 48px));
   margin: 0 auto;
