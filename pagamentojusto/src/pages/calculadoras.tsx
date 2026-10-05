@@ -1,23 +1,27 @@
+import { useState } from "react";
 import Seo from "../components/seo";
 import Navbar from "../components/navbar";
 import Valor_hora from "../components/formularios/form_valorHora";
+import CalculadoraTrabalhista, {
+  calculadorasTrabalhistas,
+  type CalculadoraTrabalhistaId,
+} from "../components/formularios/calculadoras-trabalhistas";
 import styles from "../styles/calculadoras.module.css";
 
-const upcomingCalculators = [
-  "Adicional noturno",
-  "Férias proporcionais",
-  "Insalubridade",
-  "Periculosidade",
-  "13º salário",
-  "Rescisão",
-];
+type CalculatorSelection = "valor-hora" | CalculadoraTrabalhistaId;
 
 export default function Calculadora() {
+  const [selectedCalculator, setSelectedCalculator] =
+    useState<CalculatorSelection>("valor-hora");
+  const selectedAdditionalCalculator = calculadorasTrabalhistas.find(
+    (calculator) => calculator.id === selectedCalculator,
+  );
+
   return (
     <>
       <Seo
-        title="Calculadora de salário e valor da hora | Pagamento Justo"
-        description="Calcule o valor bruto estimado da sua hora de trabalho a partir do salário mensal e da carga horária."
+        title="Calculadoras trabalhistas | Pagamento Justo"
+        description="Faça estimativas de valor da hora, adicionais, férias, 13º salário e verbas rescisórias."
         path="/calculadoras/"
       />
       <Navbar />
@@ -26,8 +30,8 @@ export default function Calculadora() {
           <p className={styles.eyebrow}>Ferramentas práticas</p>
           <h1 className={styles.title}>Calculadoras</h1>
           <p className={styles.description}>
-            Faça uma estimativa rápida e entenda melhor como o seu salário se
-            relaciona com as horas trabalhadas.
+            Faça estimativas de valores relacionados ao seu trabalho e entenda
+            melhor a composição da sua remuneração.
           </p>
         </header>
 
@@ -35,35 +39,62 @@ export default function Calculadora() {
           <aside className={styles.menu} aria-label="Calculadoras disponíveis">
             <h2 className={styles.menuTitle}>Suas ferramentas</h2>
             <p className={styles.menuHint}>
-              Mais ferramentas serão adicionadas em breve.
+              Selecione uma calculadora para começar.
             </p>
             <ul className={styles.menuList}>
               <li>
-                <span className={`${styles.menuItem} ${styles.menuItemActive}`}>
+                <button
+                  className={`${styles.menuItem} ${selectedCalculator === "valor-hora" ? styles.menuItemActive : ""}`}
+                  type="button"
+                  aria-pressed={selectedCalculator === "valor-hora"}
+                  onClick={() => setSelectedCalculator("valor-hora")}
+                >
                   Valor da hora
-                </span>
+                </button>
               </li>
-              {/* Indica funcionalidades planejadas sem apresentá-las como disponíveis. */}
-              {upcomingCalculators.map((name) => (
-                <li key={name}>
-                  <span className={styles.menuItem}>
-                    {name}
-                    <span className={styles.comingSoon}>EM BREVE</span>
-                  </span>
+              {calculadorasTrabalhistas.map((calculator) => (
+                <li key={calculator.id}>
+                  <button
+                    className={`${styles.menuItem} ${selectedCalculator === calculator.id ? styles.menuItemActive : ""}`}
+                    type="button"
+                    aria-pressed={selectedCalculator === calculator.id}
+                    onClick={() => setSelectedCalculator(calculator.id)}
+                  >
+                    {calculator.name}
+                  </button>
                 </li>
               ))}
             </ul>
           </aside>
 
-          <section className={styles.formCard} aria-labelledby="valor-hora-title">
-            <h2 className={styles.formHeading} id="valor-hora-title">
-              Quanto vale sua hora?
-            </h2>
-            <p className={styles.formDescription}>
-              Informe seu salário mensal e a carga horária para calcular uma
-              estimativa do valor bruto por hora.
-            </p>
-            <Valor_hora />
+          <section
+            className={styles.formCard}
+            aria-labelledby="calculator-title"
+          >
+            {selectedCalculator === "valor-hora" ? (
+              <>
+                <h2 className={styles.formHeading} id="calculator-title">
+                  Quanto vale sua hora?
+                </h2>
+                <p className={styles.formDescription}>
+                  Informe seu salário mensal e a carga horária para calcular
+                  uma estimativa do valor bruto por hora.
+                </p>
+                <Valor_hora />
+              </>
+            ) : selectedAdditionalCalculator ? (
+              <>
+                <h2 className={styles.formHeading} id="calculator-title">
+                  {selectedAdditionalCalculator.title}
+                </h2>
+                <p className={styles.formDescription}>
+                  {selectedAdditionalCalculator.description}
+                </p>
+                <CalculadoraTrabalhista
+                  calculatorId={selectedAdditionalCalculator.id}
+                />
+              </>
+            ) : null}
           </section>
         </div>
       </main>

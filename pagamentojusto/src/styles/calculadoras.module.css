@@ -78,27 +78,35 @@
 
 .menuItem {
   display: flex;
+  width: 100%;
   min-height: 44px;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   padding: 9px 11px;
+  border: 0;
   border-radius: 11px;
+  background: transparent;
   color: #64736d;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 13px;
   font-weight: 600;
+  text-align: left;
+}
+
+.menuItem:hover {
+  background: #f2f7f4;
+}
+
+.menuItem:focus-visible {
+  outline: 3px solid #8bd4b1;
+  outline-offset: 2px;
 }
 
 .menuItemActive {
   background: #eaf5ee;
   color: #17694d;
-}
-
-.comingSoon {
-  color: #97a39e;
-  font-size: 10px;
-  font-weight: 650;
-  white-space: nowrap;
 }
 
 .formCard {

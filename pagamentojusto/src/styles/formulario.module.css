@@ -45,6 +45,13 @@
   line-height: 1.55;
 }
 
+.error {
+  margin: 0;
+  color: #a22929;
+  font-size: 13px;
+  font-weight: 650;
+}
+
 .button {
   display: inline-flex;
   min-height: 48px;
@@ -99,4 +106,20 @@
   color: #657970;
   font-size: 12px;
   line-height: 1.5;
+}
+
+.breakdown {
+  display: grid;
+  gap: 7px;
+  margin: 14px 0 0;
+  padding: 0;
+  color: #425d50;
+  font-size: 13px;
+  list-style: none;
+}
+
+.breakdown li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
 }
